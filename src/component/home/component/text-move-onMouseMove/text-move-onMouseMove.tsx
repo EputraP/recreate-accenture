@@ -8,26 +8,23 @@ const TextMoveOnMouseMove = () => {
   return (
     <div className="text-component">
       <MouseParallaxContainer
-        containerStyle={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          fontSize: "72px",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-        }}
+        className="text-component__parallax"
         globalFactorX={0.3}
-        globalFactorY={0.3}
         resetOnLeave
       >
-        <MouseParallaxChild factorX={0.1} factorY={0}>
-          {" REINVENT WHAT YOUR"}
+        <MouseParallaxChild factorX={0.5} factorY={0}>
+          <label>REINVENT </label>
+          <label> WHAT </label>
+          <label> YOUR</label>
         </MouseParallaxChild>
-        <MouseParallaxChild inverted={true} factorX={0.1} factorY={0}>
-          {"BUSINESS COULD BE"}
+        <MouseParallaxChild inverted={true} factorX={0.5} factorY={0}>
+          <label>BUSINESS COULD BE</label>
         </MouseParallaxChild>
       </MouseParallaxContainer>
+      <div className="text-navigation">
+        <label>Let There Be Change</label>
+        <button>teafd</button>
+      </div>
     </div>
   );
 };
