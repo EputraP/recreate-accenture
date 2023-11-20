@@ -13,6 +13,19 @@
   height: auto;
   font-size: 25px;
   animation: 2s 0s slideInFromLeft;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__click-button {
+    width: 30px;
+    height: 30px;
+    background-color: #a100ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    cursor: pointer;
+  }
 }
 .text-component {
   width: 100%;

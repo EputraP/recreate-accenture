@@ -1,7 +1,7 @@
-import React from "react";
+import "./card.scss";
 
 const card = () => {
-  return <div>card</div>;
+  return <div className="card-component">card</div>;
 };
 
 export default card;

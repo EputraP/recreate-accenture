@@ -13,7 +13,7 @@ const TextMoveOnMouseMove = () => {
         resetOnLeave
       >
         <MouseParallaxChild factorX={0.5} factorY={0}>
-          <label>REINVENT </label>
+          <label className="text">REINVENT </label>
           <label> WHAT </label>
           <label> YOUR</label>
         </MouseParallaxChild>
@@ -23,7 +23,7 @@ const TextMoveOnMouseMove = () => {
       </MouseParallaxContainer>
       <div className="text-navigation">
         <label>Let There Be Change</label>
-        <button>teafd</button>
+        <div className="text-navigation__click-button">{">"}</div>
       </div>
     </div>
   );
