@@ -1,12 +1,15 @@
-import { useState } from "react";
 import "./card.scss";
 
 const card = () => {
   return (
     <div className="card-component">
       <div className="card-component__text-container">
-        <label>RESEARCH REPORT</label>
-        <label>ACCENTURE LIFE TRENDS 2024</label>
+        <div className="card-component__text-container__label">
+          <label>RESEARCH REPORT</label>
+        </div>
+        <div className="card-component__text-container__title">
+          <label>ACCENTURE LIFE TRENDS 2024</label>
+        </div>
       </div>
       <div className="overlay"></div>
       <div className="card-component__img-container">
