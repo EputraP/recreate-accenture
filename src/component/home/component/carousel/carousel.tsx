@@ -1,53 +1,80 @@
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import React, { useState } from "react";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import "./carousel.scss";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+interface Props {
+  data: any;
+}
 
-export default () => {
+const carousel = ({ data }: Props) => {
+  const [slide, setSlide] = useState(0);
+
+  const nextSlide = () => {
+    setSlide(slide === data.length - 1 ? 0 : slide + 1);
+  };
+
+  const prevSlide = () => {
+    setSlide(slide === 0 ? data.length - 1 : slide - 1);
+  };
+
   return (
-    <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-      style={{
-        backgroundColor: "white",
-        color: "black",
-        height: "300px",
-        overflow: "hidden",
-      }}
-    >
-      <SwiperSlide>
-        <div style={{ backgroundColor: "red", width: "30px", height: "80px" }}>
-          tes
+    <div className="carousel">
+      <div className="carousel__content">
+        <div className="carousel__content__image">
+          {data.map((item: any, idx: any) => {
+            return (
+              <img
+                src={item.src}
+                alt={item.alt}
+                key={idx}
+                className={slide === idx ? "slide" : "slide slide-hidden"}
+              />
+            );
+          })}
         </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div style={{ backgroundColor: "red", width: "30px", height: "80px" }}>
-          tes
+        <div className="carousel__content__text">
+          <div className="carousel__content__text__top" />
+          <div className="carousel__content__text__bottom">
+            <h4>Cybersecurity in orbit</h4>
+            <p>
+              As outer space gets more crowded and contested, QuSecure is
+              protecting communications and data transmission with the agility
+              required for the world of post-quantum computing.
+            </p>
+            <a>Read more</a>
+          </div>
         </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div style={{ backgroundColor: "red", width: "30px", height: "80px" }}>
-          tes
+      </div>
+      <div className="carousel__navigation">
+        <div className="carousel__navigation__arrow">
+          <BsArrowLeftCircleFill
+            onClick={prevSlide}
+            className="arrow arrow-left"
+          />
+          <BsArrowRightCircleFill
+            onClick={nextSlide}
+            className="arrow arrow-right"
+          />
         </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div style={{ backgroundColor: "red", width: "30px", height: "80px" }}>
-          tes
+        <div className="carousel__navigation__dot">
+          <span className="indicators">
+            {data.map((_: any, idx: any) => {
+              return (
+                <button
+                  key={idx}
+                  className={
+                    slide === idx ? "indicator" : "indicator indicator-inactive"
+                  }
+                  onClick={() => setSlide(idx)}
+                ></button>
+              );
+            })}
+          </span>
         </div>
-      </SwiperSlide>
-    </Swiper>
+      </div>
+    </div>
   );
 };
+
+export default carousel;
