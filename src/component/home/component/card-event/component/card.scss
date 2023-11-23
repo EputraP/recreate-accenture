@@ -37,7 +37,7 @@
 
 .card-component {
   position: relative;
-  width: 22rem;
+  width: 23rem;
   height: 35rem;
   cursor: pointer;
   transition: 0.5s transform;
@@ -48,17 +48,24 @@
     transform: translate(-3px, -3px);
     width: 102.5%;
     height: auto;
+    box-sizing: border-box;
+    padding-bottom: 20px;
     background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.5),
-      rgb(255, 255, 255, 0.05)
+      rgba(0, 0, 0, 0.01)
     );
+    // background-color: red;
     z-index: 60;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -68,6 +75,8 @@
       width: 100%;
       height: 3.5rem;
       label {
+        font-size: 1.167rem;
+        font-weight: 540;
         margin-top: 20px;
         display: block;
       }
@@ -76,7 +85,8 @@
       width: 100%;
       height: 4rem;
       label {
-        font-weight: bold;
+        font-size: 1.6rem;
+        font-weight: 550;
         margin-top: 10px;
         display: block;
       }

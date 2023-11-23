@@ -8,7 +8,7 @@ const card = () => {
           <label>RESEARCH REPORT</label>
         </div>
         <div className="card-component__text-container__title">
-          <label>ACCENTURE LIFE TRENDS 2024</label>
+          <label>Accenture Life Trends 2024</label>
         </div>
       </div>
       <div className="overlay"></div>

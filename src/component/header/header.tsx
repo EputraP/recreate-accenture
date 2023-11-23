@@ -5,7 +5,7 @@ const header = () => {
     <div className="header-main">
       <div className="header-main__logo-container">
         <img src={accentureLogo} />
-        <label>Accenture</label>
+        <label>accenture</label>
       </div>
     </div>
   );

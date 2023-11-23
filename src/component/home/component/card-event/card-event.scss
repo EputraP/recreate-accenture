@@ -1,9 +1,12 @@
 .card-event-component {
-  color: white;
   width: 100%;
   height: auto;
   display: flex;
-  gap: 50px;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  column-gap: 4rem;
+  row-gap: 3rem;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }

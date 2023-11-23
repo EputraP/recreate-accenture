@@ -2,10 +2,13 @@
   overflow-x: hidden;
   width: 100%;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main {
-  margin-top: 4rem;
+  margin-top: 6rem;
   height: auto;
 }
 
@@ -13,6 +16,10 @@ header,
 main,
 footer {
   width: 100%;
+}
+main,
+footer {
+  max-width: 1920px;
 }
 
 header {
@@ -23,5 +30,6 @@ header {
 }
 
 * {
-  font-family: sans-serif;
+  color: white;
+  font-family: Graphik, Arial, Helvetica, sans-serif;
 }
