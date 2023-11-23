@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import PauseIcon from "../../../../assets/pause_icon.png";
+import PlayIcon from "../../../../assets/play_icon.png";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import "./carousel.scss";
@@ -48,14 +50,18 @@ const carousel = ({ data }: Props) => {
       </div>
       <div className="carousel__navigation">
         <div className="carousel__navigation__arrow">
-          <BsArrowLeftCircleFill
+          <div>
+            <img className="play-background" src={PlayIcon} />
+            <img src={PauseIcon} />
+          </div>
+          {/* <BsArrowLeftCircleFill
             onClick={prevSlide}
             className="arrow arrow-left"
           />
           <BsArrowRightCircleFill
             onClick={nextSlide}
             className="arrow arrow-right"
-          />
+          /> */}
         </div>
         <div className="carousel__navigation__dot">
           <span className="indicators">
