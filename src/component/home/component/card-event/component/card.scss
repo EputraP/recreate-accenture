@@ -1,31 +1,12 @@
-@keyframes card-change-background {
-  0% {
-    background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Marquee-hero-Image-New%3Arad-5x3?ts=1700184505548&dpr=off")
-      no-repeat;
-    background-size: 100% 100%;
-  }
-  100% {
-    background: black;
-  }
-}
-@keyframes card-change-background-reverse {
-  0% {
-    background: black;
-  }
-  100% {
-    background: url("https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Marquee-hero-Image-New%3Arad-5x3?ts=1700184505548&dpr=off")
-      no-repeat;
-    background-size: 100% 100%;
-  }
-}
 @keyframes overlay {
   0% {
     opacity: 0%;
   }
   100% {
-    opacity: 40%;
+    opacity: 60%;
   }
 }
+
 @keyframes text-container-animation {
   0% {
     width: 100%;
@@ -40,7 +21,9 @@
   width: 23rem;
   height: 35rem;
   cursor: pointer;
+  overflow: hidden;
   transition: 0.5s transform;
+
   &__text-container {
     position: absolute;
     top: 0;
@@ -58,13 +41,10 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.01)
     );
-    // background-color: red;
+
     z-index: 60;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-top: 15px;
     cursor: pointer;
     display: flex;
@@ -96,7 +76,6 @@
       margin-left: 10px;
     }
   }
-
   &__img-container {
     width: 100%;
     height: 100%;
@@ -110,10 +89,53 @@
       border: solid black 2px;
     }
   }
+  &__sliding-content {
+    position: absolute;
+    width: 100%;
+    top: 150px;
+    left: 0;
+    z-index: 60;
+    font-size: 1.167rem;
+    line-height: 1.8rem;
+    transform: translate(1000px, 0px);
+    transition: transform 3s;
+    p {
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  &__text-container,
+  &__sliding-content {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  &__expand {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 530;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0px, 90px);
+    transition: transform 2s;
+    z-index: 60;
+    .img-arrow {
+      margin-left: 10px;
+      width: 40px;
+      height: 30px;
+    }
+  }
   &:hover {
     transform: scale(1.04);
   }
-  &:hover img {
+  &:hover .img-card {
     width: 100%;
     height: 100%;
     transform: scale(4);
@@ -125,15 +147,20 @@
     height: 100%;
     animation: 0.5s 0.5s overlay forwards;
   }
+  &:hover &__expand {
+    transform: translate(0px, 0px);
+  }
+  &:hover &__sliding-content {
+    transform: translate(0px, 0px);
+  }
 }
 
 .overlay {
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 50;
-  background-color: black;
   opacity: 0%;
 }

@@ -1,20 +1,46 @@
+import ArrowRight from "../../../../../assets/right-arrow-purple.png";
 import "./card.scss";
 
-const card = () => {
+interface Props {
+  data: any;
+}
+
+const card = ({ data }: Props) => {
   return (
     <div className="card-component">
+      <div className="card-component__img-container">
+        <img src={data.image} />
+      </div>
       <div className="card-component__text-container">
         <div className="card-component__text-container__label">
-          <label>RESEARCH REPORT</label>
+          <label
+            style={{ color: data.background == "black" ? "white" : "black" }}
+          >
+            {data.label}
+          </label>
         </div>
         <div className="card-component__text-container__title">
-          <label>Accenture Life Trends 2024</label>
+          <label
+            style={{ color: data.background == "black" ? "white" : "black" }}
+          >
+            {data.title}
+          </label>
         </div>
       </div>
-      <div className="overlay"></div>
-      <div className="card-component__img-container">
-        <img src="https://dynamicmedia.accenture.com/is/image/accenture/Accenture-Marquee-hero-Image-New%3Arad-5x3?ts=1700184505548&dpr=off" />
+      <div className="overlay" style={{ backgroundColor: data.background }} />
+      <div className="card-component__sliding-content">
+        <p style={{ color: data.background == "black" ? "white" : "black" }}>
+          {data.desc}
+        </p>
       </div>
+      <a className="card-component__expand">
+        <label
+          style={{ color: data.background == "black" ? "white" : "black" }}
+        >
+          Expand
+        </label>
+        <img className="img-arrow" src={ArrowRight} />
+      </a>
     </div>
   );
 };
