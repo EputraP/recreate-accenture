@@ -73,3 +73,14 @@
     display: block;
   }
 }
+
+.click-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #a100ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.2rem;
+  cursor: pointer;
+}
