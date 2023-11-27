@@ -9,6 +9,12 @@
   &__deg-value {
     font-size: 100px;
     font-weight: 600;
+    display: flex;
+    div {
+      display: flex;
+      box-sizing: border-box;
+      padding-top: 10px;
+    }
   }
   h3 {
     font-size: 40px;
@@ -18,4 +24,13 @@
     padding-right: 500px;
     margin-top: 15px;
   }
+}
+
+.circle-background {
+  fill: none;
+  stroke: #dddd;
+}
+.circle-progress {
+  fill: none;
+  stroke: white;
 }
