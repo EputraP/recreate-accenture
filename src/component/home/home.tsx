@@ -3,6 +3,7 @@ import TextMoveOnMouseMove from "./component/text-move-onMouseMove/text-move-onM
 import CardEvent from "./component/card-event/card-event";
 import Carousel from "./component/carousel/carousel";
 import DegValue from "./component/value-360/deg-value";
+import GlobalRecognitionAward from "./component/global-rec-awards/global-rec-award";
 import AccentureWoma from "../../assets/Accenutre-Woman-Smiling-With-Other-Woman-768x432_rad-3x2 (1).png";
 import Remaining from "../../assets/reimagining-saudi-arabia-economy-glanceskim-640x452_rad-3x2 (1).png";
 import MorningEat from "../../assets/Accenture-Father-Daughter-Breakfast-768x768_rad-3x2 (1).png";
@@ -35,7 +36,7 @@ const home = () => {
           },
         ]}
       />
-
+      <GlobalRecognitionAward />
       <div className="slides">
         <h2>test</h2>
       </div>
