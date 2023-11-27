@@ -10,7 +10,11 @@ const degvalue = () => {
     target: componentRef,
   });
 
-  scrollYProgress.onChange((value) => setScrollValue(100 - value * 100));
+  scrollYProgress.onChange((value) => {
+    let valueTemp: number;
+    valueTemp = 100 - value * 100 + 30;
+    setScrollValue(valueTemp <= 40 ? 0 : valueTemp);
+  });
   console.log(scrollValue);
   return (
     <div ref={componentRef} className="value-degree-component">
@@ -19,10 +23,12 @@ const degvalue = () => {
         {
           <div>
             <CircleProgressBar
-              circleWidth={30}
-              percentage={scrollValue ? scrollValue : 0}
-              radius={10}
-              strokeWidth={8}
+              circleWidth={50}
+              percentage={
+                scrollValue ? (scrollValue > 100 ? 100 : scrollValue) : 0
+              }
+              radius={20}
+              strokeWidth={10}
             />
           </div>
         }
