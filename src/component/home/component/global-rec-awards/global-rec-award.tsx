@@ -1,37 +1,64 @@
 import React from "react";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
+import Card from "./component/card";
 import GlobalRecognition from "../../../../assets/global-recognition.png";
 import "./global-rec-award.scss";
 
-const testData = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+const testData = [0, 1, 2];
 
 const GlobalRecognitionAward = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
   return (
     <section
       style={{
         position: "relative",
-        height: "300vh",
-        background: "green",
+        height: "200vh",
       }}
+      ref={targetRef}
     >
       <div
         style={{
           position: "sticky",
           top: "96px",
           height: "calc(100vh - 96px)",
-          background: `url(${GlobalRecognition})`,
+          background: `url(${GlobalRecognition}) no-repeat`,
           backgroundSize: "contain",
+          backgroundPosition: "center center",
           overflow: "hidden",
         }}
       >
-        <div style={{ display: "flex" }}>
-          {testData.map((data) => (
-            <div
-              style={{ width: "100%", height: "500px", background: "purple" }}
-            >
-              {data}
-            </div>
-          ))}
-        </div>
+        <motion.div
+          style={{ y, gap: "50px", display: "flex", flexDirection: "column" }}
+        >
+          {testData.map((data, key) => {
+            return (
+              <div
+                key={key}
+                style={{
+                  width: "100%",
+                  height: "460px",
+
+                  marginTop: `${key == 0 ? "100vh" : "0vh"}`, //"100vh",
+                  marginBottom: `${
+                    key == testData.length - 1 ? "100vh" : "0vh"
+                  }`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: `${key % 2 != 0 ? "flex-end" : "flex-start"}`,
+                }}
+              >
+                <Card />
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
