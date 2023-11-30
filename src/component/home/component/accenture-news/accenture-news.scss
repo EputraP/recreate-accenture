@@ -12,10 +12,7 @@
 .slider {
   height: auto;
   width: 100%;
-
   position: relative;
-  display: grid;
-  place-items: center;
   overflow: hidden;
 }
 .slide-track {
@@ -36,7 +33,18 @@
     transform: translateX(calc(-1000px * 3));
   }
 }
-.slide {
+.slide-news {
   width: 1000px;
   height: 200px;
+  cursor: pointer;
+  label {
+    font-size: 20px;
+  }
+  p {
+    font-size: 40px;
+    font-weight: bold;
+  }
+}
+.slide-news:hover {
+  opacity: 70%;
 }
