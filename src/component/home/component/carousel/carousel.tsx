@@ -11,7 +11,7 @@ interface Props {
 
 const carousel = ({ data }: Props) => {
   const [slide, setSlide] = useState(0);
-  const [autoSlideVal, setAutoSlideVal] = useState<boolean>(false);
+  const [autoSlideVal, setAutoSlideVal] = useState<boolean>(true);
 
   const nextSlide = () => {
     setSlide(slide === data.length - 1 ? 0 : slide + 1);
