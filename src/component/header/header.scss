@@ -5,6 +5,7 @@
   background-color: black;
   box-sizing: border-box;
   padding: 0px 100px 0px 100px;
+  position: relative;
   &__logo-container {
     width: 100%;
     height: 6rem;
@@ -60,6 +61,24 @@
       cursor: pointer;
     }
   }
+  &__list-item {
+    position: absolute;
+    top: 96px;
+    left: 0px;
+    width: 100vw;
+    height: auto;
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &__content {
+      width: 100%;
+      height: auto;
+      max-width: 1920px;
+      padding: 106px;
+    }
+  }
 }
 
 .language-component {
@@ -76,11 +95,66 @@
   &__arrow {
     margin-left: 5px;
     width: 22px;
+    transition: transform 0.5s;
   }
-  &__languange-pop-up {
+  &__pop-up {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: red;
+    top: 96px;
+    right: 0px;
+    width: 304px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    &__list {
+      width: 100%;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 10px;
+      font-size: 22px;
+    }
   }
+  &__pop-up::-webkit-scrollbar {
+    width: 12px;
+  }
+  &__pop-up::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(53, 1, 53);
+    border-radius: 10px;
+  }
+
+  &__pop-up::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(225, 9, 225);
+  }
+}
+
+.navbar {
+  width: 960px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-navbar {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &__arrow {
+    margin-left: 5px;
+    width: 22px;
+    transition: transform 0.5s;
+  }
+}
+
+.header-item {
+  width: 100%;
+  height: 100%;
 }
