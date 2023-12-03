@@ -10,7 +10,7 @@ interface Props {
 const dropdown = ({ label, setDropdownVal }: Props) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
-  //   console.log(label, ":", isComponentVisible);
+
   useEffect(() => {
     if (isComponentVisible) setDropdownVal(label);
     else setDropdownVal("");

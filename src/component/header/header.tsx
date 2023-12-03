@@ -8,6 +8,13 @@ import HeaderItem from "./component/header-item";
 const header = () => {
   const [dropdownVal, setDropdownVal] = useState("");
 
+  let maxHeightVal: string = "0px";
+
+  if (dropdownVal == "Insights") maxHeightVal = "536px";
+  if (dropdownVal == "Services") maxHeightVal = "706px";
+  if (dropdownVal == "Industries") maxHeightVal = "526px";
+  if (dropdownVal == "Careers") maxHeightVal = "726px";
+  if (dropdownVal == "About") maxHeightVal = "676px";
   return (
     <div className="header-main">
       <div className="header-main__logo-container">
@@ -23,7 +30,7 @@ const header = () => {
       </div>
       <div
         style={{
-          maxHeight: `${dropdownVal != "" ? "calc(100% + 206px)" : "0px"}`,
+          maxHeight: `${dropdownVal != "" ? `calc(${maxHeightVal})` : "0px"}`,
           transition: "0.5s all",
         }}
         className="header-main__list-item"
