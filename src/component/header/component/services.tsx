@@ -36,7 +36,7 @@ const services = () => {
           style={{ width: "426px" }}
           key={index}
         >
-          {item}
+          <label>{item}</label>
         </div>
       ))}
     </div>

@@ -18,9 +18,13 @@ const aboutOrganized = [
   "Industry X",
 ];
 const aboutChina = ["In Greater China"];
-const about = () => {
+const Career = () => {
   return (
-    <div className="about">
+    <div className="career">
+      <div className="">
+        <h2>Careers Home</h2>
+        <h2>Search Job</h2>
+      </div>
       <h3>WHO WE ARE</h3>
       <div className="about__about-container">
         {aboutItems.map((item, index) => (
@@ -61,4 +65,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default Career;

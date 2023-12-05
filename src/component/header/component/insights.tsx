@@ -37,7 +37,7 @@ const insights = () => {
             style={{ width: "280px" }}
             key={index}
           >
-            {item}
+            <label>{item}</label>
           </div>
         ))}
       </div>

@@ -202,6 +202,12 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+  * {
+    cursor: pointer;
+  }
+}
+.header-item-list:hover {
+  text-decoration: underline;
 }
 
 .services {
@@ -214,9 +220,18 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  h3 {
+    font-size: 2rem;
+  }
   &__about-container {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+  }
+}
+
+.career {
+  &__tab {
+    display: flex;
   }
 }
