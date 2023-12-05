@@ -1,65 +1,115 @@
 import React from "react";
 
-const aboutItems = [
-  "About Accenture",
-  "Leadership",
-  "How We Work with Clients",
-  "Case Studies",
-  "Newsroom",
-  "Investor Relations",
-  "Inclusion & Diversity",
-  "Sustainability",
+const findAllJob = [
+  "Search all jobs",
+  "Experienced professionals",
+  "Students & graduates",
+  "Executive leaders",
 ];
-const aboutOrganized = [
-  "Strategy & Consulting",
-  "Song",
-  "Technology",
-  "Operations",
-  "Industry X",
+const exploreJob = [
+  "Search jobs by areas of expertise",
+  "Consulting jobs",
+  "Corporate jobs",
+  "Digital jobs",
+  "Operations jobs",
+  "Strategy jobs",
+  "Applied intelligence jobs",
+  "Cloud jobs",
+  "Cybersecurity jobs",
+  "Industry X jobs",
+  "SAP jobs",
+  "Technology architecs jobs",
+  "Technology jobs",
 ];
-const aboutChina = ["In Greater China"];
+const lifeAtAccenture = [
+  "Careers blog",
+  "Rewards & benefits",
+  "Work environment",
+  "Training & development",
+];
 const Career = () => {
   return (
     <div className="career">
-      <div className="">
-        <h2>Careers Home</h2>
-        <h2>Search Job</h2>
+      <div className="career__title">
+        <h1>Careers Home</h1>
+        <div className="career__title__button">{">"}</div>
       </div>
-      <h3>WHO WE ARE</h3>
-      <div className="about__about-container">
-        {aboutItems.map((item, index) => (
-          <div
-            className="header-item-list"
-            style={{ width: "426px" }}
-            key={index}
+      <div className="career__item-container">
+        <div className="career__item-container__item">
+          <label
+            className="career__item-container__item"
+            style={{
+              color: "#a2a2a0",
+              boxSizing: "border-box",
+              paddingBottom: "16px",
+              cursor: "default",
+            }}
           >
-            <label>{item}</label>
-          </div>
-        ))}
-      </div>
-      <h3>HOW WE'RE ORGANIZED</h3>
-      <div className="about__about-container">
-        {aboutOrganized.map((item, index) => (
-          <div
-            className="header-item-list"
-            style={{ width: "426px" }}
-            key={index}
+            Find a job
+          </label>
+          {findAllJob.map((data: any, index: number) => (
+            <label
+              key={index}
+              style={
+                {
+                  "--text-decoration": "underline",
+                } as React.CSSProperties
+              }
+            >
+              {data}
+            </label>
+          ))}
+        </div>
+        <div className="career__item-container__item">
+          <label
+            className="career__item-container__item"
+            style={{
+              color: "#a2a2a0",
+              boxSizing: "border-box",
+              paddingBottom: "16px",
+              cursor: "default",
+            }}
           >
-            <label>{item}</label>
-          </div>
-        ))}
-      </div>
-      <h3>IN CHINA</h3>
-      <div className="about__about-container">
-        {aboutChina.map((item, index) => (
-          <div
-            className="header-item-list"
-            style={{ width: "426px" }}
-            key={index}
+            Explore jobs
+          </label>
+          {exploreJob.map((data: any, index: number) => (
+            <label
+              key={index}
+              style={
+                {
+                  "--text-decoration": "underline",
+                } as React.CSSProperties
+              }
+            >
+              {data}
+            </label>
+          ))}
+        </div>
+        <div className="career__item-container__item">
+          <label
+            className="career__item-container__item"
+            style={{
+              color: "#a2a2a0",
+              boxSizing: "border-box",
+              paddingBottom: "16px",
+              cursor: "default",
+            }}
           >
-            <label>{item}</label>
-          </div>
-        ))}
+            Life at Accenture
+          </label>
+          {lifeAtAccenture.map((data: any, index: number) => (
+            <label
+              key={index}
+              style={
+                {
+                  "--text-decoration": "underline",
+                } as React.CSSProperties
+              }
+            >
+              {data}
+            </label>
+          ))}
+        </div>
       </div>
     </div>
   );

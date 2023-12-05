@@ -2,6 +2,7 @@ import React from "react";
 import Insights from "./insights";
 import Services from "./services";
 import Industries from "./industries";
+import Career from "./career";
 import About from "./about";
 
 interface Props {
@@ -14,6 +15,7 @@ const HeaderItem = ({ value }: Props) => {
       {value == "Insights" && <Insights />}
       {value == "Services" && <Services />}
       {value == "Industries" && <Industries />}
+      {value == "Careers" && <Career />}
       {value == "About" && <About />}
     </div>
   );
